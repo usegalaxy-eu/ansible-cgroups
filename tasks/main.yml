@@ -1,0 +1,13 @@
+---
+- name: Install cgroups packages
+  package:
+    state: latest
+    name:
+    - libcgroup
+    - libcgroup-tools
+
+- name: enable and start cgconfig
+  service:
+    name: cgconfig
+    enabled: yes
+    state: started
